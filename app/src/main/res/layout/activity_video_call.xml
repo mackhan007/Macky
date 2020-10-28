@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".videoCallActivity">
+
+    <RelativeLayout
+        android:id="@+id/video_call_remote_video_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/video_call_video_chat_user_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="105dp"
+        android:src="@drawable/dp" />
+
+    <TextView
+        android:id="@+id/video_call_video_connection_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/video_call_video_chat_user_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/ringing"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/video_call_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="165dp"
+        android:gravity="center"
+        android:text="@string/Name"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/video_call_local_video_view_container"
+        android:layout_width="@dimen/local_preview_width"
+        android:layout_height="@dimen/local_preview_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/local_preview_margin_top"
+        android:layout_marginEnd="@dimen/local_preview_margin_right"
+        android:background="@color/colorPrimaryDark" />
+
+    <RelativeLayout
+        android:id="@+id/video_call_control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/control_bottom_margin">
+
+        <ImageView
+            android:id="@+id/video_call_btn_call"
+            android:layout_width="@dimen/call_button_size"
+            android:layout_height="@dimen/call_button_size"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/todo"
+            android:onClick="onCallClicked"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/end_call_img" />
+
+        <ImageView
+            android:id="@+id/video_call_btn_switch_camera"
+            android:layout_width="@dimen/other_button_size"
+            android:layout_height="@dimen/other_button_size"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/control_bottom_horizontal_margin"
+            android:layout_toEndOf="@id/video_call_btn_call"
+            android:contentDescription="@string/todo"
+            android:onClick="onSwitchCameraClicked"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/flip_camera_img" />
+
+        <ImageView
+            android:id="@+id/video_call_btn_mute"
+            android:layout_width="@dimen/other_button_size"
+            android:layout_height="@dimen/other_button_size"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/control_bottom_horizontal_margin"
+            android:layout_toStartOf="@id/video_call_btn_call"
+            android:contentDescription="@string/todo"
+            android:onClick="onLocalAudioMuteClicked"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/mic_off_img" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".audioCallCallingActivity"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/audio_calling_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="@string/Name"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/audio_calling_connection_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/calling"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audio_calling_name_tv" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/audio_calling_user_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audio_calling_connection_type_tv" />
+
+    <ImageView
+        android:id="@+id/audio_calling_speaker_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/todo"
+        android:onClick="onSwitchSpeakerphoneClicked"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audio_calling_user_img"
+        app:srcCompat="@mipmap/speker_img" />
+
+    <ImageView
+        android:id="@+id/audio_calling_video_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toStartOf="@+id/audio_calling_mic_img"
+        app:layout_constraintStart_toEndOf="@+id/audio_calling_speaker_img"
+        app:layout_constraintTop_toBottomOf="@+id/audio_calling_user_img"
+        app:srcCompat="@mipmap/video_off_img" />
+
+    <ImageView
+        android:id="@+id/audio_calling_mic_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:contentDescription="@string/todo"
+        android:onClick="onLocalAudioMuteClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audio_calling_user_img"
+        app:srcCompat="@mipmap/mic_off_img" />
+
+    <ImageView
+        android:id="@+id/audio_calling_pick_end_call_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/todo"
+        android:onClick="onEncCallClicked"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audio_calling_video_img"
+        app:srcCompat="@mipmap/end_call_img" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

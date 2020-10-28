@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Macky_chat_app</string>
+    <string name="main_page">Main Page</string>
+    <string name="welcome_to_macky_the_chating_app">Welcome to Macky \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t The chating App...</string>
+    <string name="create_a_new_account">CREATE A NEW ACCOUNT</string>
+    <string name="name">Enter Name</string>
+    <string name="email">Enter Email</string>
+    <string name="password">Enter Password</string>
+    <string name="enter">Enter</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="log_out">Log out</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="all_users">All Users</string>
+    <string name="login">LOGIN</string>
+    <string name="login_to_your_account">LOGIN TO YOUR ACCOUNT</string>
+    <string name="sinch_host_name">clientapi.sinch.com</string>
+    <string name="sinch_key">cc5f33bd-0dd3-4723-bb30-a683811d21f3</string>
+    <string name="sinch_secrect">aCr7j939PEqAn+ArhN2B9Q==</string>
+    <string name="agora_app_id">d362a634308447228cc1c8940afa51a5</string>
+    <string name="agora_access_token">006d362a634308447228cc1c8940afa51a5IACLD0ay+Q9nr+/BJXqNKVTcROUNJwUaNA+C2NTRgCQ1whrfOBYAAAAAEACzAjOTsST5XgEAAQC0JPle</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_request_page">welcome to request page</string>
+    <string name="welcome_to_chat_page">welcome to chat page</string>
+    <string name="welcome_to_friends_page">welcome to friends page</string>
+    <string name="Name">Name</string>
+    <string name="hi_there_i_m_using_macky">Hi there.I\'m using Macky.</string>
+    <string name="change_name">CHANGE NAME</string>
+    <string name="change_status">CHANGE STATUS</string>
+    <string name="your_status">Your status</string>
+    <string name="save_changes">SAVE CHANGES</string>
+    <string name="change_details">CHANGE DETAILS</string>
+    <string name="textview">TextView</string>
+    <string name="user_default_status">User Default status</string>
+    <string name="send_request">SEND FRIEND REQUEST</string>
+    <string name="total_friends">Total friends</string>
+    <string name="decline_friend_request">DECLINE FRIEND REQUEST</string>
+    <string name="default_notification_channel_id">Macky_CH_01</string>
+    <string name="todo">todo</string>
+    <string name="send_message">SEND MESSAGE</string>
+    <string name="unfriend">UNFRIEND</string>
+    <string name="last_seen">Last Seen</string>
+    <string name="enter_your_text_here">Enter your text here...</string>
+    <string name="sample_text">sample text</string>
+    <string name="time">time</string>
+    <string name="search_here">Search here</string>
+    <string name="cancle">Cancle</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="file">File</string>
+    <string name="copy">Copy</string>
+    <string name="forward">Forward</string>
+    <string name="delete">Delete</string>
+    <string name="reply">reply</string>
+    <string name="calling">Calling....</string>
+    <string name="ringing">Ringing...</string>
+    <string name="calling_mode">Calling Mode :</string>
+    <string name="back">BACK</string>
+    <string name="copyt">COPY</string>
+    <string name="deletet">DELETE</string>
+    <string name="forwardt">FORWARD</string>
+    <string name="replyt">REPLY</string>
+    <string name="current_location">Current Location</string>
+</resources>

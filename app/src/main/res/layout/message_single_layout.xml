@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/message_single_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_user_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_user_currentlocation_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/message_text_background"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/chat_user_message_name_tv">
+
+            <TextView
+                android:id="@+id/chat_user_currentlocation_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/location_box"
+                android:padding="3dp"
+                android:text="@string/current_location"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/chatmap_img"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chat_user_currentlocation_name"
+                app:srcCompat="@drawable/map" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/chat_user_dp_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/chat_user_message_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/message_text_background"
+            android:fitsSystemWindows="true"
+            android:padding="3sp"
+            android:text="@string/sample_text"
+            android:textColor="@color/lightwhite"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/chat_user_message_name_tv" />
+
+        <TextView
+            android:id="@+id/chat_user_message_text_big_tv"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/message_text_background"
+            android:fitsSystemWindows="true"
+            android:padding="3sp"
+            android:text="@string/sample_text"
+            android:textColor="@color/lightwhite"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/chat_user_message_name_tv" />
+
+        <TextView
+            android:id="@+id/chat_user_message_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/Name"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/chatReplyBox" />
+
+        <TextView
+            android:id="@+id/chat_user_message_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/time"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_message_name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/chatReplyBox" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chatReplyBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/replyboxbackground"
+            android:padding="5dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_dp_img"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/chatReplyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/Name"
+                android:textColor="#fff"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/chatReplyMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_text_background"
+                android:maxLength="40"
+                android:maxLines="1"
+                android:padding="3sp"
+                android:text="@string/sample_text"
+                android:textColor="#fff"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chatReplyName" />
+
+            <ImageView
+                android:id="@+id/chatReplyImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/todo"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chatReplyName" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/chatReplyFileBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_pic_background"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chatReplyName">
+
+                <TextView
+                    android:id="@+id/chatReplyFileName"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="@string/Name"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/chatReplyFIleImg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/chatReplyFIleImg"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:contentDescription="@string/todo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/message_file_img" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/chatReplyCurrentLocationBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_text_background"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chatReplyName">
+
+                <TextView
+                    android:id="@+id/chatreplyCurrentlocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/location_box"
+                    android:padding="3dp"
+                    android:text="@string/current_location"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/chatreplyCurrentlocationImg"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:contentDescription="@string/todo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chatreplyCurrentlocation"
+                    app:srcCompat="@drawable/map" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/chat_user_single_chat_message_img"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="@string/todo"
+            android:cropToPadding="true"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/chat_user_message_name_tv"></ImageView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_user_message_file_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/message_pic_background"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/chat_user_dp_img"
+            app:layout_constraintTop_toTopOf="@+id/chat_user_message_text_tv">
+
+            <ImageView
+                android:id="@+id/chat_user_message_file_img"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/message_file_img" />
+
+            <TextView
+                android:id="@+id/chat_user_message_file_name_tv"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chat_user_message_file_img"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/current_user_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/current_user_dp_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/current_user_message_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/message_text_background"
+            android:fitsSystemWindows="true"
+            android:padding="3sp"
+            android:text="@string/sample_text"
+            android:textColor="@color/lightwhite"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/current_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/current_user_message_name_tv" />
+
+        <TextView
+            android:id="@+id/current_user_message_text_big_tv"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/message_text_background"
+            android:fitsSystemWindows="true"
+            android:padding="3sp"
+            android:text="@string/sample_text"
+            android:textColor="@color/lightwhite"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/current_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/current_user_message_name_tv" />
+
+        <TextView
+            android:id="@+id/current_user_message_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/Name"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/current_user_message_time_tv"
+            app:layout_constraintTop_toBottomOf="@+id/currentReplyBox" />
+
+        <TextView
+            android:id="@+id/current_user_message_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/time"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/current_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/currentReplyBox" />
+
+        <ImageView
+            android:id="@+id/current_user_single_chat_message_img"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/todo"
+            android:cropToPadding="true"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/current_user_dp_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_user_message_time_tv"></ImageView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/current_user_message_file_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/message_pic_background"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/current_user_dp_img"
+            app:layout_constraintTop_toTopOf="@+id/current_user_message_text_tv">
+
+            <ImageView
+                android:id="@+id/current_user_message_file_img"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/message_file_img" />
+
+            <TextView
+                android:id="@+id/current_user_message_file_name_tv"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/current_user_message_file_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/currentReplyBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/replyboxbackground"
+            android:padding="5dp"
+            android:paddingEnd="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/currentReplyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/Name"
+                android:textColor="#fff"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/currentReplyMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_text_background"
+                android:maxLength="40"
+                android:maxLines="1"
+                android:padding="3sp"
+                android:text="@string/sample_text"
+                android:textColor="#fff"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentReplyName" />
+
+            <ImageView
+                android:id="@+id/currentReplyImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/todo"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentReplyName" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/currentReplyFileBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_pic_background"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentReplyName">
+
+                <TextView
+                    android:id="@+id/currentReplyFileName"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="@string/Name"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/currentReplyFIleImg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/currentReplyFIleImg"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:contentDescription="@string/todo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/message_file_img" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/currentReplyCurrentLocationBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_text_background"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentReplyName">
+
+                <TextView
+                    android:id="@+id/currentreplyCurrentlocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/location_box"
+                    android:padding="3dp"
+                    android:text="@string/current_location"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/currentreplyCurrentlocationImg"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:contentDescription="@string/todo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/currentreplyCurrentlocation"
+                    app:srcCompat="@drawable/map" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/current_user_currentlocation_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/message_text_background"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/current_user_dp_img"
+            app:layout_constraintTop_toBottomOf="@+id/current_user_message_name_tv">
+
+            <TextView
+                android:id="@+id/current_user_currentlocation_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/location_box"
+                android:padding="3dp"
+                android:text="@string/current_location"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/currentmap_img"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/current_user_currentlocation_name"
+                app:srcCompat="@drawable/map" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

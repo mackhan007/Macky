@@ -1,0 +1,2 @@
+rootProject.name='Macky_chat_app'
+include ':app'

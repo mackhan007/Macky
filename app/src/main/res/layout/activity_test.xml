@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_bar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/stickerPanel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/drawer_background"
+            android:paddingBottom="3dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/chat_cancle_img"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:contentDescription="@string/todo"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/cancle_image" />
+
+            <ImageView
+                android:id="@+id/chat_file_img"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginTop="2dp"
+                android:contentDescription="@string/todo"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/chat_cancle_img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/file_image" />
+
+            <ImageView
+                android:id="@+id/chat_gallery_img"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginTop="2dp"
+                android:contentDescription="@string/todo"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/chat_file_img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/insertphoto_image" />
+
+            <ImageView
+                android:id="@+id/chat_camera_img"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/todo"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chat_gallery_img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/camera_image" />
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center_horizontal"
+                android:text="@string/cancle"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chat_cancle_img" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/file"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tv1"
+                app:layout_constraintTop_toBottomOf="@+id/chat_file_img" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/gallery"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tv2"
+                app:layout_constraintTop_toBottomOf="@+id/chat_gallery_img" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/camera"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tv3"
+                app:layout_constraintTop_toBottomOf="@+id/chat_camera_img" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/chat_add_img2"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="@string/todo"
+            android:focusable="true"
+            android:src="@mipmap/add_image"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/chat_send_text_et2"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="8"
+            android:autofillHints=""
+            android:background="@drawable/edit_text_layout"
+            android:hint="@string/enter_your_text_here"
+            android:inputType="textMultiLine"
+            android:maxHeight="130dp"
+            android:overScrollMode="ifContentScrolls"
+            android:paddingStart="10dp"
+            android:paddingTop="9dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="9dp"
+            android:scrollIndicators="right"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/chat_send_img2"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="@string/todo"
+            android:focusable="true"
+            android:src="@mipmap/send_image"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stickerPanel"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ListView
+            android:id="@+id/stickerTabList"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/testcross"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ListView
+            android:id="@+id/stickerPanelList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stickerTabList">
+
+        </ListView>
+
+        <ImageView
+            android:id="@+id/testcross"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toTopOf="@id/stickerPanelList"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/stickerTabList"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/cancle_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/sticker_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@mipmap/sticker_img_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
